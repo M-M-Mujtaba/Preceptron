@@ -64,7 +64,7 @@ training_labels = y[:, :training_sample_size]
 test_labels = y[:, training_sample_size:]
 
 # intialising the control variables
-max_iter = 10000
+max_iter = 1000
 cost = [None] * ((max_iter // 100) + 1)
 cost_index = 0
 curr_cost = 10000000
@@ -82,8 +82,8 @@ while curr_cost > 0 and i <= max_iter:
     # updating the weights
     W = W + (alpha * np.matmul(np.subtract(training_labels, y_hat), training_examples))
     i += 1
-
-plt.plot([i*100 for i in range(101)], cost, 'c')
+# yes just worried idk why
+plt.plot([i*100 for i in range(11)], cost, 'c')
 plt.ylabel('Cost')
 plt.xlabel('Iteration')
 plt.show()
